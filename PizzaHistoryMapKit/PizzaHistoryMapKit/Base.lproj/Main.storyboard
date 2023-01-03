@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PizzaHistoryMapKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-d9-n8H">
+                                <rect key="frame" x="0.0" y="767" width="393" height="32"/>
+                                <segments>
+                                    <segment title="Mehsana"/>
+                                    <segment title="Ahmedabad"/>
+                                    <segment title="Baroda"/>
+                                    <segment title="Surat"/>
+                                    <segment title="Rajkot"/>
+                                </segments>
+                                <connections>
+                                    <action selector="locationPicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="dqc-8w-KlI"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rHo-PQ-QiI">
+                                <rect key="frame" x="0.0" y="79" width="393" height="33.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-zY-ZZx">
+                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="33.333333333333336"/>
+                                        <color key="backgroundColor" white="0.87181122448979587" alpha="0.68581850165562919" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Type">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="changeMapType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2b0-Kz-IE6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LV-f6-JbW">
+                                        <rect key="frame" x="76.666666666666671" y="0.0" width="54.666666666666671" height="33.333333333333336"/>
+                                        <color key="backgroundColor" white="0.87181122448979587" alpha="0.68581850165562919" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="3D">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="changePinch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I39-3P-wUn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwP-dd-iVU">
+                                        <rect key="frame" x="136.33333333333334" y="0.0" width="105" height="33.333333333333336"/>
+                                        <color key="backgroundColor" white="0.87181122448979587" alpha="0.68581850165562919" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Features">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="toggleMapFeature:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wkg-eZ-Hoo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-bU-3Ce">
+                                        <rect key="frame" x="246.33333333333337" y="0.0" width="71" height="33.333333333333336"/>
+                                        <color key="backgroundColor" white="0.87181122448979587" alpha="0.68581850165562919" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Here">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="findHere:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YTz-D6-86W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCD-op-Ldd">
+                                        <rect key="frame" x="322.33333333333331" y="0.0" width="70.666666666666686" height="33.333333333333336"/>
+                                        <color key="backgroundColor" white="0.87181122448979587" alpha="0.68581850165562919" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Find">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="findPizza:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pLG-Pm-mJ3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOi-YO-R6f">
+                                <rect key="frame" x="0.0" y="120.33333333333331" width="393" height="638.66666666666674"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WdM-tU-DrS"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vna-d9-n8H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2TX-Gb-uQu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rHo-PQ-QiI" secondAttribute="trailing" id="6Es-SE-400"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vna-d9-n8H" secondAttribute="trailing" id="9FN-aX-M6m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vna-d9-n8H" secondAttribute="bottom" constant="20" id="F6D-V1-GyU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GOi-YO-R6f" secondAttribute="trailing" id="GwO-nl-YLZ"/>
+                            <constraint firstItem="rHo-PQ-QiI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="N2o-bq-yGY"/>
+                            <constraint firstItem="GOi-YO-R6f" firstAttribute="top" secondItem="rHo-PQ-QiI" secondAttribute="bottom" constant="8" id="VgY-vS-dF2"/>
+                            <constraint firstItem="Vna-d9-n8H" firstAttribute="top" secondItem="GOi-YO-R6f" secondAttribute="bottom" constant="8" id="kQa-e1-Olj"/>
+                            <constraint firstItem="rHo-PQ-QiI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="twm-XD-FK0"/>
+                            <constraint firstItem="GOi-YO-R6f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zNq-jA-aqz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeMapType" destination="lYg-zY-ZZx" id="tRh-yQ-A3n"/>
+                        <outlet property="changePinch" destination="2LV-f6-JbW" id="tjJ-Lj-fj4"/>
+                        <outlet property="mapView" destination="GOi-YO-R6f" id="Yjg-y5-bbb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
